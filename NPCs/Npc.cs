@@ -191,7 +191,7 @@ public class Npc : MonoBehaviour
     private void Chasing()
     {
         Vector3 direction = GetDirectionToPlayer();
-        float minDistanceSqr = _minDistanceToPlayer * _minDistanceToPlayer;
+        float minDistanceSqr = _minDistanceToTarget * _minDistanceToTarget;
 
         if (direction.sqrMagnitude <= minDistanceSqr)
             return;
