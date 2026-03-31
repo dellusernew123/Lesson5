@@ -3,14 +3,18 @@ using UnityEngine;
 public class Mover : MonoBehaviour
 {
     private CharacterController _characterController;
-    public void Move(GameObject gameObject, Vector3 direction, float speed, float rotationSpeed)
+
+    private void Start()
     {
         _characterController = gameObject.GetComponent<CharacterController>();
-        _characterController.Move(direction * speed * Time.deltaTime);
-        ProcessRotateTo(direction, rotationSpeed, gameObject);
     }
 
-    private void ProcessRotateTo(Vector3 direction, float rotationSpeed, GameObject gameObject)
+    public void Move(Vector3 direction, float speed)
+    {
+        _characterController.Move(direction * speed * Time.deltaTime);
+    }
+
+    public void ProcessRotateTo(Vector3 direction, float rotationSpeed, GameObject gameObject)
     {
         Quaternion lookRotation = Quaternion.LookRotation(direction);
         float step = rotationSpeed * Time.deltaTime;

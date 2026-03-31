@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
         if (input.magnitude <= _deadZone)
             return;
             
-        _mover.Move(this.gameObject, input.normalized, _speed, _rotationSpeed);
+        _mover.Move(input.normalized, _speed);
+        _mover.ProcessRotateTo(input.normalized, _rotationSpeed, gameObject);
     }
 }

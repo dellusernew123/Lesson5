@@ -4,15 +4,12 @@ public enum NpcStates
     Active
 }
 
-public enum ActiveStateVariations
+public enum StateVariations
 {
     RunningAway,
     Chasing,
-    Dying
-}
+    Dying,
 
-public enum IdleStateVariations
-{
     DoingNothing,
     Patrolling,
     RandomWalking
